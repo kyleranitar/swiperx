@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Loading custom fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto|Lato|Lato:300' rel='stylesheet' type='text/css'>
+              <title>SwipeRx</title>
+          <meta content="pestle" property="og:title">
+          
+          
+          <meta content="pestle" name="description">
+          
+          <meta content="website" property="og:type">
+          <link rel='icon' href="App-Logo.png">
+<style>
+            img {
+              max-width: 100%;
+            }
+            img.fr-fin{
+              margin: auto;
+              padding: 10px 0;
+              display: block;
+            }
+            img.fr-dib {
+              margin: auto;
+              display: block;
+              float: none;
+              vertical-align: top;
+              margin-top: 5px;
+              margin-bottom: 5px;
+            }
+            img.fr-dib.fr-fil {
+              margin: 5px auto 5px 0;
+              left: 5px;
+            }
+            img.fr-fir{
+              float:right;
+              margin: 10px 3px 10px 10px;
+            }
+            img.fr-dib.fr-fir {
+              margin: 5px 0 5px auto;
+              right: 5px;
+            }
+            img.fr-dii {
+              margin: auto;
+              display: inline-block;
+              float: none;
+              margin-top: 5px;
+              margin-bottom: 5px;
+            }
+            img.fr-dii.fr-fil {
+              margin: 5px 10px 5px 0;
+              left: 5px;
+              float: left;
+            }
+            img.fr-dii.fr-fir {
+              margin: 5px 0 5px 10px;
+              right: 5px;
+              float: right;
+            }
+        </style>
+
+
+
+            <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+    <style>
+    * {
+    	margin: 0;
+    	padding: 0;
+      font-family: 'Lato' , Helvetica, Arial, sans-serif; font-weight: 300;
+      font-weight: 300;
+    }
+
+    ul { 
+      list-style-type: disc; 
+      list-style-position: inside; 
+    }
+    
+    ol { 
+      list-style-type: decimal; 
+      list-style-position: inside; 
+    }
+    
+    ul ul, ol ul { 
+      list-style-type: circle; 
+      list-style-position: inside; 
+      margin-left: 15px; 
+    }
+    
+    ol ol, ul ol { 
+      list-style-type: lower-latin; 
+      list-style-position: inside; 
+      margin-left: 15px; 
+    }
+
+    body {
+    	background: #2fbca1;
+    	margin: 0;
+    	color: #666;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Lato' , Helvetica, Arial, sans-serif; font-weight: normal;
+    	font-weight: 700;
+      color: #666;
+    }
+
+
+    p {
+    	padding: 0;
+    	margin-bottom: 12px;
+    	font-weight: 300;
+    	font-size: 20px;
+    	line-height: 30px;
+    	color: #666;
+    	margin-top: 10px;
+    }
+
+    html,
+    body {
+    	height: 100%;
+    }
+
+    .alignleft { float: left; }
+    .alignright { float: right; }
+    .aligncenter {
+    	margin-left: auto;
+    	margin-right: auto;
+    	display: block;
+    	clear: both;
+    }
+    .centered {text-align: center; margin-bottom: 20px;}
+    .mt {margin-top: 50px;}
+    .mb {margin-bottom: 50px;}
+    .mtb {margin-top: 30px; margin-bottom: 50px;}
+    .ptb {padding-top: 80px; padding-bottom: 80px;}
+
+    .clear {
+    	clear: both;
+    	display: block;
+    	font-size: 0;
+    	height: 0;
+    	line-height: 0;
+    	width:100%;
+    }
+    ::-moz-selection  {
+    	color: #fff;
+    	text-shadow:none;
+    	background:#2B2E31;
+    }
+    ::selection {
+    	color: #fff;
+    	text-shadow:none;
+    	background:#2B2E31;
+    }
+    *,
+    *:after,
+    *:before {
+    	-webkit-box-sizing: border-box;
+    	-moz-box-sizing: border-box;
+    	box-sizing: border-box;
+    	padding: 0;
+    	margin: 0;
+    }
+    a {
+    	padding: 0;
+    	margin: 0;
+    	text-decoration: none;
+    	-webkit-transition: background-color .4s linear, color .4s linear;
+    	-moz-transition: background-color .4s linear, color .4s linear;
+    	-o-transition: background-color .4s linear, color .4s linear;
+    	-ms-transition: background-color .4s linear, color .4s linear;
+    	transition: background-color .4s linear, color .4s linear;
+    	color: #FFF;
+    }
+    a:hover,
+    a:focus {
+      text-decoration: none;
+      color: #618732;
+    }
+
+    /* HEADER CONFIGURATION */
+    #header {
+    	background: #FFFFFF;
+    	padding-top: 15px;
+    	padding-bottom: 80px;
+    	color: #666;
+      background-image: url('landing11.jpeg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+    }
+
+    #header h2 {
+      font-family: 'Roboto' , Helvetica, Arial, sans-serif; font-weight: normal;
+    	color: #5dca88;
+    	font-size: 30px;
+    	line-height: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    #header h3 {
+    	color: #ccc;
+    	font-weight: 400;
+    	font-size: 28px;
+    }
+
+    #header hr{
+    	width: 20%;
+    	border-bottom: 3px solid #ccc;
+    }
+
+    .subtitle {
+      color: #ccc !important;
+    }
+
+    /* QUOTES */
+    .quotes h1, .quotes h2, .quotes h3, .quotes h4, .quothes h5 {
+      margin-top: 0;
+    }
+    .quote {
+      margin-top: 20px;
+    }
+
+    /* SUBSCRIBE FORM*/
+
+    #subscribe-form input[type="text"],
+    #subscribe-form input[type="email"],
+    #subscribe-form textarea,
+    #subscribe-form select{
+    	font-size: 18px;
+    	min-height: 60px;
+    	border-radius: 6px;
+    	line-height: 24px;
+    	padding: 16px 30px 20px;
+    	border: none;
+    	margin-bottom: 10px;
+    	background-color: #fff;
+    	-webkit-transition: background-color 0.2s;
+    	transition: background-color 0.2s;
+    }
+
+    #subscribe-form input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    #subscribe-form label,
+    #subscribe-form .checkbox {
+      display: inline-block;
+      background-color: transparent !important;
+      font-weight: normal;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    #subscribe-form .subscribe-input {
+    	float: left;
+    	width: 95%;
+    	text-align: left;
+    }
+
+    .btn-green2 {
+    	color: #fff;
+    	font-size: 18px;
+    	min-height: 60px;
+    	border-radius: 6px;
+    	text-decoration: none;
+    	display: block;
+    	line-height: 24px;
+    	width: 95%;
+    	z-index: 1;
+    	position: relative;
+    	border: none;
+    	background: #ffcc66;
+      margin-bottom: 20px;
+    }
+
+    .btn-sm.btn-green2 {
+      width: auto;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    .btn-green2:hover {
+    	background: #cc9933;
+    	color: white;
+    }
+
+    /* FOOTER*/
+    #f {
+    	background: #2d312f;
+    	color: #8c9494;
+    	padding-top: 50px;
+    	padding-bottom: 50px;
+    }
+
+    #f p, #f h1, #f h2, #f h3, #f h4, #f h5, #f strong{
+      color: #8c9494 !important;
+    }
+
+
+
+    .privacy-copyright {
+      background-color: #FFFFFF;
+      color: #000000 !important;
+    }
+    
+
+    .privacy-copyright p {
+      font-size: 12px;
+      color: #000000 !important;
+    }
+    
+    img {
+      max-width: 100% !important;
+    }
+    
+
+    
+
+    @media only screen and (max-width : 992px) {
+      .pull-right, .text-center > img {
+        clear: both;
+        float: none !important;
+        text-align: center;
+        margin: auto;
+     }
+     #subscribe-form .subscribe-input,
+     .btn-green2 {
+       width: 100%;
+     }
+     .feature.mt {
+       margin-top: 0;
+     }
+    }
+
+    @media only screen and (max-width : 768px) {
+     .text-left, .text-right {
+       text-align: center;
+     }
+    }
+.headingbox {
+  background-color: rgba(255,255,255,0.6);
+  position: relative;
+  z-index: 20;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+    </style>
+    
+
+  </head>
+
+  <style>
+      .navbar {
+        background-color: #FFFFFF;
+        height: 60px;
+      }
+  </style>
+
+  <body>
+<!-- Navigation -->
+    <nav class="navbar" role="navigation" style="
+    margin-bottom: 0px;border: 0px;">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="page-scroll" href="#page-top">
+                    <img src="logos/newlogo.png" style = "height:60px;">
+                </a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                   
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+	<div id="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 mt">
+          <div class="headingbox">
+				  <div data-mercury="froala" data-content-name="title_text">
+				    <h2><span style="font-family: Roboto; color: #2FBCA1; font-size: 40px;">The social network tailor-made for pharmacists.</span></h2>
+				  </div>
+					<hr>
+
+					          <form data-page-id="101182" accept-charset="UTF-8" class="signup_form" data-remote="true" id="signup_form" method="post">
+          
+					<div data-mercury="froala" data-content-name="subtitle_text" class="subtitle">
+					  <h3><span style="color: #006666;"><strong><span style="font-family: Roboto;">Life beyond the counter.</span></strong></span><br></h3>
+            <img src="logos/google-play-badge.png" class="logo">
+            <p><strong>Get on the waiting list now for early access.</strong></p>
+					</div>
+          
+<style>
+.logo {
+  width: 35%;
+}
+</style>
+			<div class='prefinery-form-embed'></div>
+
+<script type="text/javascript">var _pfy = _pfy || [];(function(){function pfy_load(){var pfys=document.createElement('script');pfys.type='text/javascript';pfys.async=true;pfys.src='https://swiperx.prefinery.com/widget/v2/4vzw3oz4.js';var pfy=document.getElementsByTagName('script')[0];pfy.parentNode.insertBefore(pfys,pfy);}if (window.attachEvent){window.attachEvent('onload',pfy_load);}else{window.addEventListener('load',pfy_load,false);}})();</script>
+          <!-- Response -->
+          <div id="kol_fade"></div>
+
+				</div>
+</div>
+
+				<div class="col-md-6">
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="6"></li>
+        
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img class="first-slide" src="mockups/Login.png" alt="First slide">
+        </div>
+        <div class="item">
+          <img class="second-slide" src="mockups/discoverjob.png" alt="Second slide">
+        </div>
+        <div class="item">
+          <img class="third-slide" src="mockups/article.png" alt="Third slide">
+          </div>
+         <div class="item">
+          <img class="fourth-slide" src="mockups/savedlinks.png" alt="fourth slide">
+        </div>
+        <div class="item">
+          <img class="fifth-slide" src="mockups/post.png" alt="fifth slide">
+        </div>
+        <div class="item">
+          <img class="sixth-slide" src="mockups/notif.png" alt="sixth slide">
+        </div>
+        <div class="item">
+          <img class="seventh-slide" src="mockups/profile.png" alt="seventh slide">
+        </div>
+          <div class="container">
+            
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+<style>
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    width: 50%;
+    padding-top: 50px;
+    margin-left: 100px;
+
+}
+.carousel-indicators {
+  display:none;
+}
+
+.features {
+  color: white;
+  font-size: 40px; 
+}
+
+
+
+</style>
+					
+				</div>
+			</div><!--/row -->
+		</div><!-- /.container -->
+	</div><!--/Header -->
+
+  
+	<div class="container mtb">
+    <div class="row centered">
+      <h2 class="features">Features</h2>
+</div>
+		<div class="row centered">
+
+		  
+			<div class="col-md-4">
+			  <div data-mercury="froala" data-content-name="feature_one">
+			    <h4><img class="fr-dib" src="logos/Jobs.png" style="width: 130px;"><span style="font-family: Roboto;"><span style="font-size: 24px;"><span style="color: rgb(255, 255, 255);"><strong>Jobs</strong></span></span></span></h4><p><span style="font-family: Roboto;"><span style="color: rgb(255, 255, 255);">Find job opportunities efficiently and intuitively with listings catered toward the improvement of a pharmacist’s career.</span></span></p>
+			  </div>
+			</div><!--/col-md-4-->
+
+			<div class="col-md-4">
+				<div data-mercury="froala" data-content-name="feature_two">
+			    <h4><img class="fr-dib" src="logos/News.png" style="width: 130px;"></h4><h4><span style="font-family: Roboto;"><span style="font-size: 24px;"><span style="color: rgb(255, 255, 255);"><strong>News</strong></span></span></span></h4><p><span style="font-family: Roboto;"><span style="color: rgb(255, 255, 255);">Get updated with the latest government announcements, journal articles, and scientific discoveries in the world of pharmacists.</span></span></p>
+			  </div>
+			</div><!--/col-md-4-->
+
+			<div class="col-md-4">
+				<div data-mercury="froala" data-content-name="feature_three">
+			    <h4><img class="fr-dib" src="logos/Communication.png" style="width: 130px;"></h4><h4><span style="font-family: Roboto;"><span style="font-size: 24px;"><span style="color: rgb(255, 255, 255);"><strong>Communication</strong></span></span></span></h4><p><span style="font-family: Roboto;"><span style="color: rgb(255, 255, 255);">Chat with your long lost college classmate, association head, and even that newfound friend all within the same app.</span></span></p>
+			  </div>
+			</div><!--/col-md-4-->
+
+
+			
+		</div><!--/row -->
+	</div><!--/container -->
+	</div>
+
+  
+  
+  <style> 
+    .img-responsive {
+    width: 70%;
+    }
+</style>
+
+  
+
+  
+  
+	<div class="privacy-copyright">
+	  <div class="container">
+	    <div class="row">
+	      <div class="col-sm-6 text-left">
+	        <div data-mercury="froala" data-content-name="copyright_text">
+	          <p>Copyright 2016</p>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
+	</div>
+
+
+
+      <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+
+  <script src="http://d1y0v6ricksqp.cloudfront.net/js/jquery-libs/fitvid/1.1/jquery.fitvids.js"></script>
+  <script>
+  if (typeof kolInsertFroalaImage === 'undefined')
+      $(".container, .container-fluid").fitVids();
+  </script>
+
+  <script>
+    $(document).ready(function() {
+      var elem = $('#subscribe-form').find('input').first(),
+          button = $('#uptoform');
+
+      button.on('click', function() {
+        $('html, body').animate({
+          scrollTop: elem.offset().top - 50
+        }, 'slow')
+
+        elem.focus();
+      });
+    });
+  </script>
+        
+<script>
+$(document).ready(function(){
+    // Activate Carousel
+    $("#myCarousel").carousel({interval: 2000});
+
+});
+    
+    </script>
+
+
+  </body>
+</html>
